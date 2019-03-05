@@ -1,5 +1,7 @@
 package com.example;
-
+/** 
+* doc package
+*/
 
 public class Greeter {
 

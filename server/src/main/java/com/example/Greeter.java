@@ -13,6 +13,9 @@ public class Greeter {
 
   }
   
+  public fct01() {
+  }
+  
 /**
 * @param someone name of personn
 * @return greeting string

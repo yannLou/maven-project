@@ -1,3 +1,4 @@
+
 package com.example;
 /** 
 * doc package
@@ -13,7 +14,7 @@ public class Greeter {
 
   }
   
-  public fct01() {
+  public void fct01() { 
   }
   
 /**

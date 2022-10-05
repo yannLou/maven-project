@@ -1,7 +1,10 @@
+package com.example;
+
+
 import java.lang.Math;
 import java.io.* ;
 
-package com.example;
+//package com.example;
 
 public class Greeter {
 

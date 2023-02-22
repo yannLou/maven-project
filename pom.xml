@@ -46,7 +46,7 @@
                 <!-- Reports all bugs (other values are medium and max) -->
                 <threshold>Low</threshold>
                 <!-- Produces XML report -->
-                <xmlOutput>true</xmlOutput>
+                <!--xmlOutput>true</xmlOutput-->
             </configuration>
         </plugin>
       <plugin>

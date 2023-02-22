@@ -1,0 +1,12 @@
+<DetectorPlugin>
+
+  <Detector class="org.foobar.findbugs.FindUnreleasedLocks" speed="slow" />
+  <Detector class="org.foobar.findbugs.ExperimentalDetector" speed="fast" disabled="true" />
+
+  <!-- More Detector elements would go here... -->
+
+  <BugPattern type="UBL_UNRELEASED_LOCK" abbrev="UL" category="MT_CORRECTNESS" />
+
+  <!-- More BugPattern elements would go here... -->
+
+</DetectorPlugin>

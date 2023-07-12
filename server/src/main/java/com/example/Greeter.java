@@ -20,6 +20,7 @@ public class Greeter {
   }
   
   public void fct01() { 
+   // un commentaire
   }
   
  /**

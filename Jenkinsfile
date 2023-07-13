@@ -9,8 +9,8 @@ pipeline {
     }
     stage('Build') {
       steps {
-       // sh 'mvn Package'
-        bat 'mvn Package'
+       // sh 'mvn package'
+        bat 'mvn package'
       }
     }
 

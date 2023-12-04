@@ -9,24 +9,15 @@ import java.io.* ;
 */
 
 public class Greeter {
-
  
   /**
   * this in contructor
   */
  
   public Greeter() {
+  }
 
-  }
-  
-  public void fct01() { 
-   // un commentaire
-  }
-  
-
- public void fct02() { 
-  }
-  
+ 
  /**
  * @param someone name of a person
  * @return greeting string

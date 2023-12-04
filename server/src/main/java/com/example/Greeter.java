@@ -17,6 +17,13 @@ public class Greeter {
   public Greeter() {
   }
 
+   public funct1() {
+  }
+
+    public funct2() {
+  }
+
+
  
  /**
  * @param someone name of a person

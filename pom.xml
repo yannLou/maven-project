@@ -74,7 +74,10 @@
             <plugin>
               <artifactId>maven-checkstyle-plugin</artifactId>
             </plugin>
-                            
+           <dependency>
+              <groupId>net.sourceforge.pmd</groupId>
+              <artifactId>pmd-jsp</artifactId>
+            </dependency>                
             <plugin>
               <artifactId>maven-jxr-plugin</artifactId>
             </plugin>

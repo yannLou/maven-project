@@ -17,14 +17,6 @@ public class Greeter {
   public Greeter() {
   }
 
- public void func1() {
-    // do no thing
- }
-
-  public void func2() {
-    // do no thing
-
- 
  /**
  * @param someone name of a person
  * @return greeting string

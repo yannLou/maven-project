@@ -11,12 +11,16 @@ pipeline {
         echo "Testing is done"
       }
     }
-    stage('Build') {
+    stage('Build and Send Results to Sonar') {
       steps {
+         withSonarQubeEnv(installationName: 'sonarqube')
+        {
        // sh 'mvn package'
-        bat 'mvn package'
+        bat 'mvn -B -DskipTests clean package sonar:sonar -Dsonar.login=admin -Dsonar.password=Admin'
+        }
       }
     }
 
+    
+ }
   }
-}

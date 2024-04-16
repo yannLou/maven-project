@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+    
+    tools {
+        maven 'localMaven'
+    }
+    
+    stages {
+        stage('Clone') {
+            steps {
+                
+                // get repos 
+                git 'https://github.com/tahararib/maven-project.git'
+                }
+            
+        }
+        
+        stage('Compile'){
+            steps{
+                withMaven(maven:'localMaven')
+                {
+                    // sh "mvn compile"
+                    bat "mvn compile"
+                }
+            }
+        }
+        
+        stage('Test') {
+            steps{
+                withMaven(maven:'localMaven')
+                {
+                    // sh "mvn test"
+                    bat "mvn test"
+                }
+            }
+            
+        }
+        
+        stage('Build') {
+            steps{
+                withMaven(maven:'localMaven')
+                {
+                    // sh "mvn packaget"
+                    bat "mvn -B -DskipTests clean package"
+                }
+            }
+            
+        }
+        
+        stage('Build and send Results Sonar') {
+            steps {
+                withSonarQubeEnv(installationName : 'localSonarQube', credentialsId:'key4sonarqube') 
+                {
+                    bat 'mvn -B -DskipTests clean package sonar:sonar'                }
+            }
+        }
+        
+    }
+}

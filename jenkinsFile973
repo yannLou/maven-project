@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+    tools {
+    maven "localMaven"    
+    }
+    stages {
+        stage('Clone CodeBase') {
+            steps {
+                echo 'Clone GitHub repo'
+                git 'https://github.com/yannLou/maven-project.git'
+            }
+        }
+        stage('Compile') {
+            steps {
+                echo 'Compile the project'
+                withMaven(maven:'localMaven')
+                {
+                    bat "mvn compile"
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+                withMaven(maven:'localMaven')
+                {
+                    bat "mvn test"
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building project'
+                withMaven(maven:'localMaven')
+                {
+                    bat "mvn -B -DskipTests clean package"
+                }
+            }
+        }
+        stage('Build and scan with SonarQube') {
+            steps {
+                echo 'Scan Sonar'
+                withSonarQubeEnv(installationName:'localSonar', credentialsId:'token2sonar')
+                {
+                    bat "mvn -B -DskipTests clean package sonar:sonar"
+                }
+            }
+        }
+    }
+}
